@@ -765,6 +765,82 @@ const ENTRY_LIST_BASE = {
     { num:"6911", name:"Mike Thielen",     sponsor:"Thielen Racing",                             team:"Thielen Racing" },
     { num:"729",  name:"Nicholas Januik",  sponsor:"Januik Racing",                              team:"Januik Racing" },
   ]
+  tad: [
+    { num:"10",   name:"Melanie Johnson",  sponsor:"Hadman / AJPE",               team:"Johnson Racing" },
+    { num:"6",    name:"Jamie Noonan",     sponsor:"Firebird",                    team:"Noonan Racing" },
+    { num:"613",  name:"Joey Severance",   sponsor:"Indy Speed",                  team:"Severance Racing" },
+    { num:"491",  name:"Angelle Sampey",   sponsor:"JFR Canopy",                  team:"Sampey Racing" },
+    { num:"2",    name:"Matthew Cummings", sponsor:"Drag Racing",                 team:"Cummings Racing" },
+    { num:"T200", name:"Anthony Troyer",   sponsor:"Indy Speed",                  team:"Troyer Racing" },
+    { num:"515",  name:"James Stevens",    sponsor:"Dragster Racing",             team:"Stevens Racing" },
+    { num:"104",  name:"Corey Michalek",   sponsor:"Copeland / AJPE",             team:"Michalek Racing" },
+    { num:"8",    name:"McKenna Bold",     sponsor:"Bold Racing",                 team:"Bold Racing" },
+    { num:"24",   name:"Megan Smith",      sponsor:"Smith Racing",                team:"Smith Racing" },
+    { num:"2192", name:"Sarah Allen",      sponsor:"Allen Racing",                team:"Allen Racing" },
+    { num:"450",  name:"Kirk Wolf",        sponsor:"Copeland / NOON",             team:"Wolf Racing" },
+    { num:"16",   name:"John Ausherman",   sponsor:"Ausherman Racing",            team:"Ausherman Racing" },
+    { num:"176",  name:"Jeff Veale",       sponsor:"Veale Racing",                team:"Veale Racing" },
+    { num:"74",   name:"Jerry Kumre Jr",   sponsor:"Kumre Racing",                team:"Kumre Racing" },
+    { num:"75",   name:"Johnny Ahten",     sponsor:"Ahten Racing",                team:"Ahten Racing" },
+  ],
+  tafc: [
+    { num:"1",    name:"Sean Bellemeur",   sponsor:"Bellemeur Racing Camaro",     team:"Bellemeur Racing" },
+    { num:"9",    name:"Chris Foster",     sponsor:"Foster Racing Camaro",        team:"Foster Racing" },
+    { num:"7524", name:"Doug Gordon",      sponsor:"Gordon Racing Camaro",        team:"Gordon Racing" },
+    { num:"238",  name:"Mick Steele",      sponsor:"Steele Racing Mustang",       team:"Steele Racing" },
+    { num:"6",    name:"Phil Esz",         sponsor:"Esz Racing Camaro",           team:"Esz Racing" },
+    { num:"12",   name:"Jackie Fricke",    sponsor:"Fricke Racing",               team:"Fricke Racing" },
+    { num:"57",   name:"Braiden Chesleigh",sponsor:"Chesleigh Racing",            team:"Chesleigh Racing" },
+    { num:"118",  name:"Jon Bradford",     sponsor:"Bradford Racing",             team:"Bradford Racing" },
+    { num:"55",   name:"Chris Demke",      sponsor:"Demke Racing",                team:"Demke Racing" },
+  ],
+  fss: [
+    { num:"1",    name:"Mark Pawuk",       sponsor:"COPO Camaro",                 team:"Pawuk Racing" },
+    { num:"5",    name:"Scott Libersher",  sponsor:"Mustang Cobra Jet",           team:"Libersher Racing" },
+    { num:"212",  name:"Richard Hord",     sponsor:"Hord Racing COPO Camaro",     team:"Hord Racing" },
+    { num:"3397", name:"David Davies",     sponsor:"Davies Racing",               team:"Davies Racing" },
+    { num:"350",  name:"Doug Duell",       sponsor:"Duell Racing",                team:"Duell Racing" },
+    { num:"803",  name:"Rouven Dawson",    sponsor:"Dawson Racing",               team:"Dawson Racing" },
+    { num:"3047", name:"Kim Shirley",      sponsor:"Shirley Racing",              team:"Shirley Racing" },
+    { num:"446",  name:"Conner Statler",   sponsor:"Statler Racing",              team:"Statler Racing" },
+    { num:"14",   name:"David Janac",      sponsor:"Janac Brothers Mustang CJ",   team:"Janac Brothers" },
+    { num:"103",  name:"Cristian Cuadra",  sponsor:"Cuadra Racing COPO",          team:"Cuadra Racing" },
+  ],
+  fx: [
+    { num:"1",    name:"Troy Coughlin Jr.",sponsor:"JEGS COPO Camaro",            team:"JEGS Racing" },
+    { num:"2",    name:"Bob Gulitti",      sponsor:"Gulitti Racing Drag Pak",     team:"Gulitti Racing" },
+    { num:"3",    name:"Tommy Lee",        sponsor:"Lee Racing",                  team:"Lee Racing" },
+    { num:"4",    name:"Jeff Strickland",  sponsor:"Strickland Racing",           team:"Strickland Racing" },
+    { num:"5",    name:"Matt Hargis",      sponsor:"Hargis Racing",               team:"Hargis Racing" },
+  ],
+  td: [
+    { num:"—", name:"Open Field",         sponsor:"16-32 car qualified field",   team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
+  ts: [
+    { num:"—", name:"Open Field",         sponsor:"16-32 car qualified field",   team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
+  sc: [
+    { num:"—", name:"Open Field",         sponsor:"Field of 32 / index racing",  team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
+  sg: [
+    { num:"—", name:"Open Field",         sponsor:"Field of 32 / index racing",  team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
+  ss: [
+    { num:"—", name:"Open Field",         sponsor:"Handicap bracket racing",     team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
+  st: [
+    { num:"—", name:"Open Field",         sponsor:"Handicap bracket racing",     team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
+  ce: [
+    { num:"—", name:"Open Field",         sponsor:"75+ classes / indexed racing", team:"Various" },
+    { num:"—", name:"Entry List",         sponsor:"Posted at each race",         team:"Various" },
+  ],
 };
 
 // Track live-fetched overrides
@@ -1197,7 +1273,12 @@ function renderEntryList() {
   container.innerHTML = '';
   const data = getEntryData(activeEntryClass);
 
-  const classNames = { tf:'Top Fuel', fc:'Funny Car', ps:'Pro Stock', psm:'Pro Stock Motorcycle', pm:'Pro Mod' };
+  const classNames = {
+    tf:'Top Fuel', fc:'Funny Car', ps:'Pro Stock', psm:'Pro Stock Motorcycle', pm:'Pro Mod',
+    tad:'Top Alcohol Dragster', tafc:'Top Alcohol Funny Car', fss:'Factory Stock Showdown',
+    fx:'Factory X', td:'Top Dragster', ts:'Top Sportsman', sc:'Super Comp',
+    sg:'Super Gas', ss:'Super Stock', st:'Stock Eliminator', ce:'Competition Eliminator'
+  };
 
   const subtitle = document.getElementById('entry-subtitle');
   if (subtitle) subtitle.textContent = `${data.length} ${classNames[activeEntryClass]} competitors · 2026 Season`;
