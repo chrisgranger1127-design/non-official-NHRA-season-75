@@ -85,14 +85,12 @@ const DRIVER_PHOTOS = {
   "Brayden Davis":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-12/hyde-head.jpg.webp",
   "Chase Van Sant":     "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/dwilk-head.png.webp",
   "Clayton Howey":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/lee-had.png.webp",
-  // PRO MOD
-  "Rickie Smith":       "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2017-01/Rickie%20Smith.jpg.webp",
-  "Bob Rahaim":         "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2017-01/Bob%20Rahaim.jpg.webp",
-  "Steve Jackson":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/green-headshot.png.webp",
-  "Derek Menholt":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/capps-head.png.webp",
-  "Mike Stavrinos":     "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/tasca-head.png.webp",
-  "Todd Tutterow":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-07/beckman-head.png.webp",
-  "Billy Banaka":       "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2023-03/antron-head.png.webp",
+  // PRO MOD — only a few have NHRA.com headshots; others show placeholder
+  "Steve Jackson":      "https://www.nhra.com/sites/default/files/2017-05/Jackson_Steve_2017.JPG",
+  "Mike Castellana":    "https://www.nhra.com/sites/default/files/2017-05/Castellana_Mike_2017.JPG",
+  "Sidnei Frigo":       "https://www.nhra.com/sites/default/files/2017-05/Frigo_Sidnei_2017.JPG",
+  "Kevin Rivenbark":    "https://www.nhra.com/sites/default/files/2017-05/Rivenbark_Kevin_2017.JPG",
+  // Erica Enders also races Pro Mod — her photo is already in PS section above
 };
 
 // Helper: get photo URL for a driver name (fuzzy last-name match fallback)
@@ -748,18 +746,24 @@ const ENTRY_LIST_BASE = {
     { num:"15", name:"Ron Tornow",      sponsor:"Ron Tornow Racing",                          team:"Tornow Racing" },
   ],
   pm: [
-    { num:"100", name:"Billy Banaka",       sponsor:"Billy Banaka Racing",             team:"Billy Banaka Racing" },
-    { num:"31",  name:"Derek Menholt",      sponsor:"Menholt Auto Group",              team:"Menholt Racing" },
-    { num:"32",  name:"Mike Stavrinos",     sponsor:"Stavrinos Racing",                team:"Stavrinos Racing" },
-    { num:"33",  name:"Rickie Smith",       sponsor:"Jerry Bickel Race Cars",          team:"Rickie Smith Racing" },
-    { num:"4",   name:"Ty Tutton",          sponsor:"Traction Tire",                   team:"Tutton Racing" },
-    { num:"44",  name:"Jim Whiteley",       sponsor:"Whiteley Racing",                 team:"Whiteley Racing" },
-    { num:"55",  name:"Mason Wright",       sponsor:"ProFlow Plumbing Solutions",      team:"Elite Motorsports" },
-    { num:"66",  name:"Todd Tutterow",      sponsor:"Tutterow Racing",                 team:"Tutterow Racing" },
-    { num:"72",  name:"Troy Coughlin Jr.",  sponsor:"JEGS.com",                        team:"Elite Motorsports" },
-    { num:"77",  name:"Bob Rahaim",         sponsor:"Rahaim Racing",                   team:"Rahaim Racing" },
-    { num:"88",  name:"Steve Jackson",      sponsor:"Great Clips",                     team:"Steve Jackson Racing" },
-    { num:"99",  name:"Jose Gonzalez",      sponsor:"JG Motorsports",                  team:"JG Motorsports" },
+    { num:"5",    name:"Derek Menholt",    sponsor:"Menholt Auto Group",                         team:"Scott Tidwell Racing" },
+    { num:"6280", name:"Justin Bond",      sponsor:"Al-Anabi Racing / JBS Motorsport",           team:"JBS Motorsport" },
+    { num:"2",    name:"Billy Banaka",     sponsor:"S&B Trucking / Logistics / B&Q",             team:"Banaka Racing" },
+    { num:"280",  name:"Steve Jackson",    sponsor:"Stevie Fast Jackson Racing",                 team:"Steve Jackson Racing" },
+    { num:"44",   name:"Mike Castellana",  sponsor:"Al Anabi Performance / Western Beef",        team:"Castellana Racing" },
+    { num:"1",    name:"JR Gray",          sponsor:"Al-Anabi Racing",                            team:"Gray Motorsports" },
+    { num:"3",    name:"Michael Stavrinos",sponsor:"Speed & Truck World / Al-Anabi",             team:"Stavrinos Racing" },
+    { num:"288",  name:"Sidnei Frigo",     sponsor:"Artivinco Racing / KTR",                     team:"Frigo Racing" },
+    { num:"212",  name:"Stan Shelton",     sponsor:"Team Shelton Motorsports",                   team:"Team Shelton Motorsports" },
+    { num:"9",    name:"Chip King Jr",     sponsor:"MWP Contractors",                            team:"King Racing" },
+    { num:"225",  name:"Kevin Rivenbark",  sponsor:"Team Shelton Motorsports",                   team:"Team Shelton Motorsports" },
+    { num:"205",  name:"Lyle Barnett",     sponsor:"Scott Tidwell Racing",                       team:"Scott Tidwell Racing" },
+    { num:"40",   name:"Alex Laughlin",    sponsor:"Laughlin Racing",                            team:"Laughlin Racing" },
+    { num:"4334", name:"Mason Wright",     sponsor:"ProFlow Plumbing Solutions / Elite",         team:"Elite Motorsports" },
+    { num:"4000", name:"Jason Scruggs",    sponsor:"Scruggs / Henson",                           team:"Scruggs Racing" },
+    { num:"430",  name:"Erica Enders",     sponsor:"JHG / Melling Performance / R+L Carriers",  team:"Elite Motorsports" },
+    { num:"6911", name:"Mike Thielen",     sponsor:"Thielen Racing",                             team:"Thielen Racing" },
+    { num:"729",  name:"Nicholas Januik",  sponsor:"Januik Racing",                              team:"Januik Racing" },
   ]
 };
 
