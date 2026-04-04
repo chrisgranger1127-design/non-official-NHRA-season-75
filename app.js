@@ -85,6 +85,14 @@ const DRIVER_PHOTOS = {
   "Brayden Davis":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-12/hyde-head.jpg.webp",
   "Chase Van Sant":     "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/dwilk-head.png.webp",
   "Clayton Howey":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/lee-had.png.webp",
+  // PRO MOD
+  "Rickie Smith":       "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2017-01/Rickie%20Smith.jpg.webp",
+  "Bob Rahaim":         "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2017-01/Bob%20Rahaim.jpg.webp",
+  "Steve Jackson":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/green-headshot.png.webp",
+  "Derek Menholt":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/capps-head.png.webp",
+  "Mike Stavrinos":     "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-03/tasca-head.png.webp",
+  "Todd Tutterow":      "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2024-07/beckman-head.png.webp",
+  "Billy Banaka":       "https://www.nhra.com/sites/default/files/styles/driver_headshot_listing/public/2023-03/antron-head.png.webp",
 };
 
 // Helper: get photo URL for a driver name (fuzzy last-name match fallback)
@@ -738,6 +746,20 @@ const ENTRY_LIST_BASE = {
     { num:"13", name:"Ryan Oehler",     sponsor:"El Bandido Tequila",                         team:"Oehler Racing" },
     { num:"14", name:"Hector Arana Jr", sponsor:"GETTRX Buell",                               team:"Arana Racing" },
     { num:"15", name:"Ron Tornow",      sponsor:"Ron Tornow Racing",                          team:"Tornow Racing" },
+  ],
+  pm: [
+    { num:"100", name:"Billy Banaka",       sponsor:"Billy Banaka Racing",             team:"Billy Banaka Racing" },
+    { num:"31",  name:"Derek Menholt",      sponsor:"Menholt Auto Group",              team:"Menholt Racing" },
+    { num:"32",  name:"Mike Stavrinos",     sponsor:"Stavrinos Racing",                team:"Stavrinos Racing" },
+    { num:"33",  name:"Rickie Smith",       sponsor:"Jerry Bickel Race Cars",          team:"Rickie Smith Racing" },
+    { num:"4",   name:"Ty Tutton",          sponsor:"Traction Tire",                   team:"Tutton Racing" },
+    { num:"44",  name:"Jim Whiteley",       sponsor:"Whiteley Racing",                 team:"Whiteley Racing" },
+    { num:"55",  name:"Mason Wright",       sponsor:"ProFlow Plumbing Solutions",      team:"Elite Motorsports" },
+    { num:"66",  name:"Todd Tutterow",      sponsor:"Tutterow Racing",                 team:"Tutterow Racing" },
+    { num:"72",  name:"Troy Coughlin Jr.",  sponsor:"JEGS.com",                        team:"Elite Motorsports" },
+    { num:"77",  name:"Bob Rahaim",         sponsor:"Rahaim Racing",                   team:"Rahaim Racing" },
+    { num:"88",  name:"Steve Jackson",      sponsor:"Great Clips",                     team:"Steve Jackson Racing" },
+    { num:"99",  name:"Jose Gonzalez",      sponsor:"JG Motorsports",                  team:"JG Motorsports" },
   ]
 };
 
@@ -1171,7 +1193,7 @@ function renderEntryList() {
   container.innerHTML = '';
   const data = getEntryData(activeEntryClass);
 
-  const classNames = { tf:'Top Fuel', fc:'Funny Car', ps:'Pro Stock', psm:'Pro Stock Motorcycle' };
+  const classNames = { tf:'Top Fuel', fc:'Funny Car', ps:'Pro Stock', psm:'Pro Stock Motorcycle', pm:'Pro Mod' };
 
   const subtitle = document.getElementById('entry-subtitle');
   if (subtitle) subtitle.textContent = `${data.length} ${classNames[activeEntryClass]} competitors · 2026 Season`;
