@@ -1930,3 +1930,41 @@ a, button, [role="button"] {
   color: var(--text-muted);
   border: 1px solid var(--border);
 }
+
+/* ── CLASS PILL COLOR SYSTEM (overrides all previous) ── */
+/* Nitro: Top Fuel + Funny Car — RED */
+.pill-nitro, .wc-class-pill.pill-nitro {
+  background: rgba(232,22,26,0.18) !important;
+  color: #E8161A !important;
+  border: 1px solid rgba(232,22,26,0.5) !important;
+}
+/* Pro Stock + Pro Stock Moto — GREEN */
+.pill-prostock, .wc-class-pill.pill-prostock {
+  background: rgba(52,199,89,0.15) !important;
+  color: #34C759 !important;
+  border: 1px solid rgba(52,199,89,0.45) !important;
+}
+/* Pro Mod — PURPLE */
+.pill-promod, .wc-class-pill.pill-promod {
+  background: rgba(168,111,223,0.18) !important;
+  color: #a86fdf !important;
+  border: 1px solid rgba(168,111,223,0.5) !important;
+}
+/* Top Alcohol — ORANGE/GOLD */
+.pill-alcohol, .wc-class-pill.pill-alcohol {
+  background: rgba(245,166,35,0.18) !important;
+  color: #F5A623 !important;
+  border: 1px solid rgba(245,166,35,0.5) !important;
+}
+/* Factory Stock + Factory X — BLUE */
+.pill-factory, .wc-class-pill.pill-factory {
+  background: rgba(85,145,199,0.18) !important;
+  color: #5591c7 !important;
+  border: 1px solid rgba(85,145,199,0.5) !important;
+}
+/* Sportsman — GRAY */
+.pill-sport, .wc-class-pill.pill-sport {
+  background: var(--surface-3) !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border) !important;
+}

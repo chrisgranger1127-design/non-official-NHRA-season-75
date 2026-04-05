@@ -1582,22 +1582,23 @@ function openModal(race) {
 
       // Map every class name used in race.classes to an entry key + pill style
       const CLASS_KEY_MAP = {
-        'Top Fuel':                { key:'tf',   pill:'pill-tf'  },
-        'Funny Car':               { key:'fc',   pill:'pill-fc'  },
-        'Pro Stock':               { key:'ps',   pill:'pill-ps'  },
-        'Pro Stock Motorcycle':    { key:'psm',  pill:'pill-psm' },
-        'Pro Mod':                 { key:'pm',   pill:'pill-pm'  },
-        'Top Alcohol Dragster':    { key:'tad',  pill:'pill-tad' },
-        'Top Alcohol Funny Car':   { key:'tafc', pill:'pill-tafc'},
-        'Factory Stock Showdown':  { key:'fss',  pill:'pill-fss' },
-        'Factory X':               { key:'fx',   pill:'pill-fss' },
-        'Top Dragster':            { key:'td',   pill:'pill-sport'},
-        'Top Sportsman':           { key:'ts',   pill:'pill-sport'},
-        'Super Comp':              { key:'sc',   pill:'pill-sport'},
-        'Super Gas':               { key:'sg',   pill:'pill-sport'},
-        'Super Stock':             { key:'ss',   pill:'pill-sport'},
-        'Stock Eliminator':        { key:'st',   pill:'pill-sport'},
-        'Competition Eliminator':  { key:'ce',   pill:'pill-sport'},
+        'Top Fuel':                { key:'tf',   pill:'pill-nitro'   },
+        'Funny Car':               { key:'fc',   pill:'pill-nitro'   },
+        'Pro Stock':               { key:'ps',   pill:'pill-prostock'},
+        'Pro Stock Motorcycle':    { key:'psm',  pill:'pill-prostock'},
+        'Pro Mod':                 { key:'pm',   pill:'pill-promod'  },
+        'Top Alcohol Dragster':    { key:'tad',  pill:'pill-alcohol' },
+        'Top Alcohol Funny Car':   { key:'tafc', pill:'pill-alcohol' },
+        'Factory Stock Showdown':  { key:'fss',  pill:'pill-factory' },
+        'Factory X':               { key:'fx',   pill:'pill-factory' },
+        'Top Dragster':            { key:'td',   pill:'pill-sport'   },
+        'Top Sportsman':           { key:'ts',   pill:'pill-sport'   },
+        'Super Comp':              { key:'sc',   pill:'pill-sport'   },
+        'Super Gas':               { key:'sg',   pill:'pill-sport'   },
+        'Super Stock':             { key:'ss',   pill:'pill-sport'   },
+        'Stock Eliminator':        { key:'st',   pill:'pill-sport'   },
+        'Competition Eliminator':  { key:'ce',   pill:'pill-sport'   },
+        'Super Street':            { key:'ss',   pill:'pill-sport'   },
       };
       // Build classMap from the actual classes at this race
       const classMap = (race.classes || [])
@@ -1688,14 +1689,19 @@ function openModal(race) {
   }
 
   // Classes — styled by tier
-  const proClasses     = ['Top Fuel','Funny Car','Pro Stock','Pro Stock Motorcycle','Pro Mod'];
+  const nitroClasses   = ['Top Fuel','Funny Car'];
+  const proStockClasses= ['Pro Stock','Pro Stock Motorcycle'];
   const alcoholClasses = ['Top Alcohol Dragster','Top Alcohol Funny Car'];
   const factoryClasses = ['Factory Stock Showdown','Factory X','Mountain Motor Pro Stock'];
+  const proModClasses  = ['Pro Mod'];
   document.getElementById('modal-classes').innerHTML = race.classes.map(c => {
     let tier = '';
-    if (proClasses.includes(c))     tier = 'pro';
-    else if (alcoholClasses.includes(c)) tier = 'alcohol';
-    else if (factoryClasses.includes(c)) tier = 'factory';
+    if (nitroClasses.includes(c))    tier = 'pill-nitro';
+    else if (proStockClasses.includes(c)) tier = 'pill-prostock';
+    else if (proModClasses.includes(c))   tier = 'pill-promod';
+    else if (alcoholClasses.includes(c))  tier = 'pill-alcohol';
+    else if (factoryClasses.includes(c))  tier = 'pill-factory';
+    else                                   tier = 'pill-sport';
     return `<span class="class-pill ${tier}">${c}</span>`;
   }).join('');
 
