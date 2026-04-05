@@ -1582,23 +1582,23 @@ function openModal(race) {
 
       // Map every class name used in race.classes to an entry key + pill style
       const CLASS_KEY_MAP = {
-        'Top Fuel':                { key:'tf',   pill:'pill-nitro'   },
-        'Funny Car':               { key:'fc',   pill:'pill-nitro'   },
-        'Pro Stock':               { key:'ps',   pill:'pill-prostock'},
-        'Pro Stock Motorcycle':    { key:'psm',  pill:'pill-prostock'},
-        'Pro Mod':                 { key:'pm',   pill:'pill-promod'  },
-        'Top Alcohol Dragster':    { key:'tad',  pill:'pill-alcohol' },
-        'Top Alcohol Funny Car':   { key:'tafc', pill:'pill-alcohol' },
-        'Factory Stock Showdown':  { key:'fss',  pill:'pill-factory' },
-        'Factory X':               { key:'fx',   pill:'pill-factory' },
-        'Top Dragster':            { key:'td',   pill:'pill-sport'   },
-        'Top Sportsman':           { key:'ts',   pill:'pill-sport'   },
-        'Super Comp':              { key:'sc',   pill:'pill-sport'   },
-        'Super Gas':               { key:'sg',   pill:'pill-sport'   },
-        'Super Stock':             { key:'ss',   pill:'pill-sport'   },
-        'Stock Eliminator':        { key:'st',   pill:'pill-sport'   },
-        'Competition Eliminator':  { key:'ce',   pill:'pill-sport'   },
-        'Super Street':            { key:'ss',   pill:'pill-sport'   },
+        'Top Fuel':                { key:'tf',   pill:'pill-nitro'    },
+        'Funny Car':               { key:'fc',   pill:'pill-nitro'    },
+        'Pro Stock':               { key:'ps',   pill:'pill-prostock' },
+        'Pro Stock Motorcycle':    { key:'psm',  pill:'pill-prostock' },
+        'Pro Mod':                 { key:'pm',   pill:'pill-promod'   },
+        'Top Alcohol Dragster':    { key:'tad',  pill:'pill-alcohol'  },
+        'Top Alcohol Funny Car':   { key:'tafc', pill:'pill-alcohol'  },
+        'Factory Stock Showdown':  { key:'fss',  pill:'pill-factory'  },
+        'Factory X':               { key:'fx',   pill:'pill-factoryx' },
+        'Top Dragster':            { key:'td',   pill:'pill-td'       },
+        'Top Sportsman':           { key:'ts',   pill:'pill-ts'       },
+        'Super Comp':              { key:'sc',   pill:'pill-sc'       },
+        'Super Gas':               { key:'sg',   pill:'pill-sg'       },
+        'Super Stock':             { key:'ss',   pill:'pill-ss'       },
+        'Stock Eliminator':        { key:'st',   pill:'pill-st'       },
+        'Competition Eliminator':  { key:'ce',   pill:'pill-ce'       },
+        'Super Street':            { key:'sst',  pill:'pill-sst'      },
       };
       // Build classMap from the actual classes at this race
       const classMap = (race.classes || [])
@@ -1689,19 +1689,19 @@ function openModal(race) {
   }
 
   // Classes — styled by tier
-  const nitroClasses   = ['Top Fuel','Funny Car'];
-  const proStockClasses= ['Pro Stock','Pro Stock Motorcycle'];
-  const alcoholClasses = ['Top Alcohol Dragster','Top Alcohol Funny Car'];
-  const factoryClasses = ['Factory Stock Showdown','Factory X','Mountain Motor Pro Stock'];
-  const proModClasses  = ['Pro Mod'];
+  const MODAL_CLASS_PILLS = {
+    'Top Fuel':'pill-nitro','Funny Car':'pill-nitro',
+    'Pro Stock':'pill-prostock','Pro Stock Motorcycle':'pill-prostock',
+    'Pro Mod':'pill-promod',
+    'Top Alcohol Dragster':'pill-alcohol','Top Alcohol Funny Car':'pill-alcohol',
+    'Factory Stock Showdown':'pill-factory','Factory X':'pill-factoryx',
+    'Top Dragster':'pill-td','Top Sportsman':'pill-ts',
+    'Super Comp':'pill-sc','Super Gas':'pill-sg',
+    'Super Stock':'pill-ss','Stock Eliminator':'pill-st',
+    'Competition Eliminator':'pill-ce','Super Street':'pill-sst',
+  };
   document.getElementById('modal-classes').innerHTML = race.classes.map(c => {
-    let tier = '';
-    if (nitroClasses.includes(c))    tier = 'pill-nitro';
-    else if (proStockClasses.includes(c)) tier = 'pill-prostock';
-    else if (proModClasses.includes(c))   tier = 'pill-promod';
-    else if (alcoholClasses.includes(c))  tier = 'pill-alcohol';
-    else if (factoryClasses.includes(c))  tier = 'pill-factory';
-    else                                   tier = 'pill-sport';
+    const tier = MODAL_CLASS_PILLS[c] || 'pill-sport';
     return `<span class="class-pill ${tier}">${c}</span>`;
   }).join('');
 

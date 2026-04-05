@@ -1968,3 +1968,23 @@ a, button, [role="button"] {
   color: var(--text-muted) !important;
   border: 1px solid var(--border) !important;
 }
+
+/* ── UNIQUE COLOR PER CLASS ── */
+/* Factory X — cyan */
+.pill-factoryx { background: rgba(0,210,210,0.15) !important; color: #00d2d2 !important; border: 1px solid rgba(0,210,210,0.45) !important; }
+/* Top Dragster — lime green */
+.pill-td { background: rgba(100,220,60,0.15) !important; color: #64dc3c !important; border: 1px solid rgba(100,220,60,0.45) !important; }
+/* Top Sportsman — teal */
+.pill-ts { background: rgba(20,180,160,0.15) !important; color: #14b4a0 !important; border: 1px solid rgba(20,180,160,0.45) !important; }
+/* Super Comp — pink */
+.pill-sc { background: rgba(255,80,160,0.15) !important; color: #ff50a0 !important; border: 1px solid rgba(255,80,160,0.45) !important; }
+/* Super Gas — yellow */
+.pill-sg { background: rgba(255,220,0,0.15) !important; color: #e8c800 !important; border: 1px solid rgba(255,220,0,0.45) !important; }
+/* Super Stock — sky blue */
+.pill-ss { background: rgba(30,160,255,0.15) !important; color: #1ea0ff !important; border: 1px solid rgba(30,160,255,0.45) !important; }
+/* Stock Eliminator — coral/salmon */
+.pill-st { background: rgba(255,120,80,0.15) !important; color: #ff7850 !important; border: 1px solid rgba(255,120,80,0.45) !important; }
+/* Competition Eliminator — lavender */
+.pill-ce { background: rgba(180,130,255,0.15) !important; color: #b482ff !important; border: 1px solid rgba(180,130,255,0.45) !important; }
+/* Super Street — mint */
+.pill-sst { background: rgba(0,230,130,0.15) !important; color: #00e682 !important; border: 1px solid rgba(0,230,130,0.45) !important; }
