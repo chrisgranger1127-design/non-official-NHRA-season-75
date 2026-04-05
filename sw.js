@@ -3,8 +3,8 @@
 
 const CACHE_NAME = 'nhra-2026-v3';
 const ASSETS = [
-  '/non-official-NHRA-season-75/',
-  '/non-official-NHRA-season-75/index.html',
+  '/nhra-season-75/',
+  '/nhra-season-75/index.html',
   '/style.css',
   '/app.js',
   '/manifest.json',
