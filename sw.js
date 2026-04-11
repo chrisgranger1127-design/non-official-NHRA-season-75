@@ -1,7 +1,7 @@
 // NHRA 2026 — Service Worker
 // Caches the app shell for offline use
 
-const CACHE_NAME = 'nhra-2026-v3';
+const CACHE_NAME = 'nhra-2026-v9';
 const ASSETS = [
   '/nhra-season-75/',
   '/nhra-season-75/index.html',
