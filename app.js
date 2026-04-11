@@ -2038,7 +2038,9 @@ function renderStandings() {
       <div class="standing-bar-wrap">
         <div class="standing-name">${d.name}</div>
         <div class="standing-bar-track">
-          <div class="standing-bar-fill" style="width:${pct}%"></div>
+          <div class="standing-bar-fill" style="width:${pct}%">
+              ${d.f2t ? `<div class="standing-bar-f2t" style="width:${Math.round((d.f2t/d.pts)*100)}%"></div>` : ''}
+            </div>
         </div>
       </div>
       <div class="standing-pts-col">
