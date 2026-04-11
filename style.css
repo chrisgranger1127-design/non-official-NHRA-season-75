@@ -2217,8 +2217,8 @@ a, button, [role="button"] {
   right: 0; top: 0; bottom: 0;
   background: var(--gold);
   border-radius: 0 var(--radius-full) var(--radius-full) 0;
-  opacity: 1;
-  min-width: 6px;
+  min-width: 8px;
+  z-index: 1;
 }
 .standing-bar-fill { position: relative; }
 .f2t-badge {
@@ -2877,3 +2877,11 @@ a, button, [role="button"] {
 .entry-row-clickable:active { transform: scale(0.98); background: var(--surface-3); }
 .entry-chevron { color: var(--text-faint); flex-shrink: 0; display: flex; align-items: center; }
 .entry-row-clickable:hover .entry-chevron { color: var(--accent); }
+
+/* 2F2T gold section in stat strip */
+.da-strip-f2t {
+  background: rgba(245,166,35,0.25);
+  border-left: 1px solid rgba(245,166,35,0.4);
+}
+.da-strip-f2t .da-strip-big { color: var(--gold) !important; }
+.da-strip-f2t .da-strip-lbl { color: var(--gold) !important; opacity: 0.85; }
