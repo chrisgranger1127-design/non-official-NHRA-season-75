@@ -544,6 +544,108 @@ const RACES = [
 ];
 
 
+
+// ─── ELIMINATION BRACKETS ─────────────────────────────────────────────────────
+// Race day bracket — round by round results
+// Structure: BRACKETS[raceId][classKey] = { rounds: [{name, pairs: [{w,l,wet,wmp,let,lmp}]}] }
+
+const BRACKETS = {
+  1: { // Gatornationals
+    tf: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Josh Hart",      l:"Leah Pruett",     wet:"3.733", wmp:"337.83", let:"3.812", lmp:"324.04" },
+        { w:"Doug Kalitta",   l:"Antron Brown",    wet:"3.756", wmp:"338.34", let:"3.831", lmp:"319.63" },
+        { w:"Shawn Langdon",  l:"Billy Torrence",  wet:"3.745", wmp:"338.51", let:"3.887", lmp:"308.50" },
+        { w:"Tony Schumacher",l:"Clay Millican",   wet:"3.915", wmp:"312.42", let:"4.112", lmp:"280.07" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Josh Hart",      l:"Doug Kalitta",    wet:"3.743", wmp:"335.23", let:"3.768", lmp:"331.20" },
+        { w:"Shawn Langdon",  l:"Tony Schumacher", wet:"3.752", wmp:"336.40", let:"4.283", lmp:"193.04" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Josh Hart",      l:"Shawn Langdon",   wet:"3.733", wmp:"337.83", let:"3.801", lmp:"327.92" },
+      ]},
+    ]},
+    fc: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Chad Green",        l:"Spencer Hyde",      wet:"3.959", wmp:"329.91", let:"4.052", lmp:"316.08" },
+        { w:"Alexis DeJoria",    l:"Austin Prock",      wet:"3.987", wmp:"328.50", let:"4.047", lmp:"309.14" },
+        { w:"Jordan Vandergriff",l:"Ron Capps",         wet:"3.995", wmp:"325.61", let:"4.068", lmp:"321.19" },
+        { w:"Matt Hagan",        l:"JR Todd",           wet:"4.003", wmp:"322.88", let:"4.174", lmp:"290.23" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Chad Green",        l:"Alexis DeJoria",    wet:"3.959", wmp:"329.91", let:"4.012", lmp:"317.64" },
+        { w:"Jordan Vandergriff",l:"Matt Hagan",        wet:"3.997", wmp:"324.75", let:"4.085", lmp:"307.88" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Chad Green",        l:"Jordan Vandergriff",wet:"3.959", wmp:"329.91", let:"4.019", lmp:"321.89" },
+      ]},
+    ]},
+    ps: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Matt Hartford",  l:"Greg Anderson",    wet:"6.587", wmp:"208.94", let:"6.610", lmp:"207.34" },
+        { w:"Dallas Glenn",   l:"Aaron Stanfield",  wet:"6.589", wmp:"209.17", let:"6.602", lmp:"208.46" },
+        { w:"Erica Enders",   l:"Greg Stanfield",   wet:"6.596", wmp:"208.68", let:"6.617", lmp:"207.82" },
+        { w:"Cody Coughlin",  l:"Matt Latino",      wet:"6.598", wmp:"208.36", let:"6.633", lmp:"206.91" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Matt Hartford",  l:"Dallas Glenn",     wet:"6.587", wmp:"208.94", let:"6.594", lmp:"208.83" },
+        { w:"Cody Coughlin",  l:"Erica Enders",     wet:"6.598", wmp:"208.36", let:"6.627", lmp:"207.44" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Matt Hartford",  l:"Cody Coughlin",    wet:"6.587", wmp:"208.94", let:"6.615", lmp:"207.91" },
+      ]},
+    ]},
+  },
+  2: { // Arizona Nationals
+    tf: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Shawn Langdon",  l:"Maddi Gordon",     wet:"3.859", wmp:"329.02", let:"3.917", lmp:"312.06" },
+        { w:"Josh Hart",      l:"Tony Schumacher",  wet:"3.874", wmp:"325.93", let:"4.152", lmp:"242.11" },
+        { w:"Doug Kalitta",   l:"Tony Stewart",     wet:"3.881", wmp:"326.00", let:"3.943", lmp:"315.42" },
+        { w:"Leah Pruett",    l:"Antron Brown",     wet:"3.900", wmp:"318.92", let:"4.017", lmp:"295.31" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Shawn Langdon",  l:"Josh Hart",        wet:"3.859", wmp:"329.02", let:"3.886", lmp:"323.08" },
+        { w:"Doug Kalitta",   l:"Leah Pruett",      wet:"3.881", wmp:"326.00", let:"3.933", lmp:"314.60" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Shawn Langdon",  l:"Doug Kalitta",     wet:"3.859", wmp:"329.02", let:"3.924", lmp:"308.64" },
+      ]},
+    ]},
+    fc: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Ron Capps",       l:"Spencer Hyde",    wet:"3.895", wmp:"326.48", let:"4.072", lmp:"309.56" },
+        { w:"Jordan Vandergriff",l:"Chad Green",    wet:"3.952", wmp:"324.91", let:"4.010", lmp:"318.34" },
+        { w:"JR Todd",         l:"Alexis DeJoria",  wet:"3.969", wmp:"322.11", let:"4.104", lmp:"294.17" },
+        { w:"Matt Hagan",      l:"Paul Lee",        wet:"3.987", wmp:"320.04", let:"4.093", lmp:"304.88" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Ron Capps",       l:"Jordan Vandergriff",wet:"3.895",wmp:"326.48",let:"3.968",lmp:"320.72" },
+        { w:"JR Todd",         l:"Matt Hagan",      wet:"3.969", wmp:"322.11", let:"4.022", lmp:"315.44" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Ron Capps",       l:"JR Todd",         wet:"3.895", wmp:"326.48", let:"4.196", lmp:"282.42" },
+      ]},
+    ]},
+    ps: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Dallas Glenn",   l:"Erica Enders",     wet:"6.627", wmp:"206.39", let:"6.641", lmp:"206.73" },
+        { w:"Greg Anderson",  l:"Matt Hartford",    wet:"6.532", wmp:"208.26", let:"6.600", lmp:"207.55" },
+        { w:"Cody Coughlin",  l:"Greg Stanfield",   wet:"6.615", wmp:"207.07", let:"6.632", lmp:"207.04" },
+        { w:"Aaron Stanfield",l:"Matt Latino",      wet:"6.618", wmp:"207.24", let:"6.651", lmp:"206.88" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Dallas Glenn",   l:"Greg Anderson",    wet:"6.608", wmp:"207.62", let:"6.644", lmp:"207.18" },
+        { w:"Cody Coughlin",  l:"Aaron Stanfield",  wet:"6.615", wmp:"207.07", let:"6.628", lmp:"207.44" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Dallas Glenn",   l:"Cody Coughlin",    wet:"6.627", wmp:"206.39", let:"6.654", lmp:"206.22" },
+      ]},
+    ]},
+  },
+};
+
 // ─── QUALIFYING RESULTS ──────────────────────────────────────────────────────
 // Per-round qualifying data. sessions[Q] = array of {pos, driver, car, et, mph}
 // currentOrder = best combined order after all completed rounds
@@ -764,21 +866,21 @@ const RACE_ENTRY_LISTS = {
 // ─── POINTS STANDINGS (after Race 2 — Arizona Nationals) ─────────────────────
 const STANDINGS = {
   tf: [
-    { pos:1,  name:"Doug Kalitta",    pts:176, behind:0 },
-    { pos:2,  name:"Josh Hart",       pts:174, behind:-2 },
-    { pos:3,  name:"Shawn Langdon",   pts:170, behind:-6 },
-    { pos:4,  name:"Leah Pruett",     pts:158, behind:-18 },
-    { pos:5,  name:"Maddi Gordon",    pts:152, behind:-24 },
-    { pos:6,  name:"Tony Stewart",    pts:108, behind:-68 },
-    { pos:7,  name:"Antron Brown",    pts:107, behind:-69 },
-    { pos:8,  name:"Tony Schumacher", pts:101, behind:-75 },
-    { pos:9,  name:"Billy Torrence",  pts:78,  behind:-98 },
-    { pos:10, name:"Justin Ashley",   pts:65,  behind:-111 },
-    { pos:11, name:"Shawn Reed",      pts:65,  behind:-111 },
-    { pos:12, name:"Clay Millican",   pts:62,  behind:-114 },
-    { pos:13, name:"Tripp Tatum III", pts:53,  behind:-123 },
-    { pos:14, name:"Cameron Ferre",   pts:41,  behind:-135 },
-    { pos:15, name:"Will Smith",      pts:41,  behind:-135 },
+    { pos:1,  name:"Doug Kalitta",    pts:176, behind:0,    f2t:3 },
+    { pos:2,  name:"Josh Hart",       pts:174, behind:-2,   f2t:3 },
+    { pos:3,  name:"Shawn Langdon",   pts:170, behind:-6,   f2t:0 },
+    { pos:4,  name:"Leah Pruett",     pts:158, behind:-18,  f2t:0 },
+    { pos:5,  name:"Maddi Gordon",    pts:152, behind:-24,  f2t:1 },
+    { pos:6,  name:"Tony Stewart",    pts:108, behind:-68,  f2t:0 },
+    { pos:7,  name:"Antron Brown",    pts:107, behind:-69,  f2t:1 },
+    { pos:8,  name:"Tony Schumacher", pts:101, behind:-75,  f2t:0 },
+    { pos:9,  name:"Billy Torrence",  pts:78,  behind:-98,  f2t:0 },
+    { pos:10, name:"Justin Ashley",   pts:65,  behind:-111, f2t:0 },
+    { pos:11, name:"Shawn Reed",      pts:65,  behind:-111, f2t:0 },
+    { pos:12, name:"Clay Millican",   pts:62,  behind:-114, f2t:0 },
+    { pos:13, name:"Tripp Tatum III", pts:53,  behind:-123, f2t:0 },
+    { pos:14, name:"Cameron Ferre",   pts:41,  behind:-135, f2t:0 },
+    { pos:15, name:"Will Smith",      pts:41,  behind:-135, f2t:0 },
   ],
   fc: [
     { pos:1,  name:"Chad Green",          pts:174, behind:0 },
@@ -798,21 +900,21 @@ const STANDINGS = {
     { pos:15, name:"Julie Nataas",        pts:32,  behind:-142 },
   ],
   ps: [
-    { pos:1,  name:"Dallas Glenn",      pts:195, behind:0 },
-    { pos:2,  name:"Matt Hartford",     pts:160, behind:-35 },
-    { pos:3,  name:"Cody Coughlin",     pts:158, behind:-37 },
-    { pos:4,  name:"Greg Anderson",     pts:142, behind:-53 },
-    { pos:5,  name:"Erica Enders",      pts:128, behind:-67 },
-    { pos:6,  name:"Greg Stanfield",    pts:118, behind:-77 },
-    { pos:7,  name:"Matt Latino",       pts:109, behind:-86 },
-    { pos:8,  name:"Jeg Coughlin Jr.",  pts:107, behind:-88 },
-    { pos:9,  name:"Aaron Stanfield",   pts:106, behind:-89 },
-    { pos:10, name:"Cody Anderson",     pts:83,  behind:-112 },
-    { pos:11, name:"Chris McGaha",      pts:82,  behind:-113 },
-    { pos:12, name:"Deric Kramer",      pts:67,  behind:-128 },
-    { pos:13, name:"Eric Latino",       pts:65,  behind:-130 },
-    { pos:14, name:"Troy Coughlin Jr.", pts:64,  behind:-131 },
-    { pos:15, name:"Stephen Bell",      pts:62,  behind:-133 },
+    { pos:1,  name:"Dallas Glenn",      pts:195, behind:0,    f2t:3 },
+    { pos:2,  name:"Matt Hartford",     pts:160, behind:-35,  f2t:4 },
+    { pos:3,  name:"Cody Coughlin",     pts:158, behind:-37,  f2t:0 },
+    { pos:4,  name:"Greg Anderson",     pts:142, behind:-53,  f2t:2 },
+    { pos:5,  name:"Erica Enders",      pts:128, behind:-67,  f2t:2 },
+    { pos:6,  name:"Greg Stanfield",    pts:118, behind:-77,  f2t:0 },
+    { pos:7,  name:"Matt Latino",       pts:109, behind:-86,  f2t:0 },
+    { pos:8,  name:"Jeg Coughlin Jr.",  pts:107, behind:-88,  f2t:0 },
+    { pos:9,  name:"Aaron Stanfield",   pts:106, behind:-89,  f2t:0 },
+    { pos:10, name:"Cody Anderson",     pts:83,  behind:-112, f2t:0 },
+    { pos:11, name:"Chris McGaha",      pts:82,  behind:-113, f2t:0 },
+    { pos:12, name:"Deric Kramer",      pts:67,  behind:-128, f2t:0 },
+    { pos:13, name:"Eric Latino",       pts:65,  behind:-130, f2t:0 },
+    { pos:14, name:"Troy Coughlin Jr.", pts:64,  behind:-131, f2t:0 },
+    { pos:15, name:"Stephen Bell",      pts:62,  behind:-133, f2t:0 },
   ],
   psm: [
     { pos:1,  name:"Richard Gadson",  pts:124, behind:0 },
@@ -1550,9 +1652,9 @@ function renderWinnersCircle() {
   RACES.forEach(race => {
     const card = document.createElement('div');
     card.className = 'wc-card';
-
     const sDate = parseDate(race.startDate);
     const status = getRaceStatus(race);
+    const hasBracket = BRACKETS[race.id] != null;
 
     card.innerHTML = `
       <div class="wc-card-header">
@@ -1561,14 +1663,17 @@ function renderWinnersCircle() {
           <div class="wc-race-name">${race.name}</div>
           <div class="wc-race-venue">${race.venue} · ${race.city}</div>
         </div>
-        <div style="text-align:right;flex-shrink:0">
+        <div style="text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
           <div class="wc-race-date">${MONTHS3U[sDate.getMonth()]} ${sDate.getDate()}</div>
-          <div style="font-size:var(--text-xs);color:var(--text-faint);margin-top:2px">${sDate.getFullYear()}</div>
+          ${hasBracket ? `<button class="bracket-btn" data-race="${race.id}">🏁 Bracket</button>` : ''}
         </div>
       </div>
       <div class="wc-winners-grid" id="wc-grid-${race.id}"></div>`;
 
     container.appendChild(card);
+
+    // Wire bracket button
+    card.querySelector('.bracket-btn')?.addEventListener('click', () => openBracketModal(race.id));
 
     const grid = document.getElementById(`wc-grid-${race.id}`);
 
@@ -1614,13 +1719,19 @@ function renderStandings() {
   const leader = data[0];
   const maxPts = leader.pts;
 
+  // 2F2T info box
+  const f2tBox = document.createElement('div');
+  f2tBox.className = 'f2t-info-box';
+  f2tBox.innerHTML = `⚡ <strong>Mission 2Fast2Tasty</strong> — Bonus points (shown in gold) carry into the Countdown and are not reset. Winner=3pts · Runner-up=2pts · Quickest Semi=1pt`;
+  container.appendChild(f2tBox);
+
   // Leader card
   const leaderEl = document.createElement('div');
   leaderEl.className = 'standings-leader';
   leaderEl.innerHTML = `
     <div class="leader-pos">🏆 Points Leader</div>
     <div class="leader-name">${leader.name}</div>
-    <div class="leader-pts">${leader.pts} <span>pts</span></div>`;
+    <div class="leader-pts">${leader.pts} <span>pts</span>${leader.f2t ? ` <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.7)">incl. ⚡${leader.f2t} 2F2T</span>` : ''}</div>`;
   container.appendChild(leaderEl);
 
   // Rest of field
@@ -2430,6 +2541,97 @@ function checkAndStartLiveRefresh() {
   if (liveRace) {
     startLiveQualRefresh(liveRace.id);
   }
+}
+
+
+// ─── BRACKET MODAL ────────────────────────────────────────────────────────────
+function openBracketModal(raceId) {
+  const race = RACES.find(r => r.id === raceId);
+  const data = BRACKETS[raceId];
+  if (!race || !data) return;
+
+  const overlay = document.getElementById('modal-backdrop');
+  const sheet   = document.getElementById('modal-sheet');
+
+  // Set content
+  document.getElementById('modal-event-num').textContent = `Race ${race.id} of 20 · Race Day Bracket`;
+  document.getElementById('modal-title').textContent = race.name;
+  document.getElementById('modal-location').textContent = `${race.venue} — ${race.city}`;
+  document.getElementById('modal-dates').textContent = formatDateRange(race.startDate, race.endDate);
+  document.getElementById('modal-tv').textContent = `📺 ${race.tv}`;
+
+  // Hide entry/qualifying/winners sections
+  ['modal-winners-section','modal-entry-section','modal-qualifying-section'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('hidden','');
+  });
+
+  // Inject bracket into classes section
+  const classesEl = document.getElementById('modal-classes');
+  const classesSec = classesEl?.closest('.section-block');
+  if (classesSec) {
+    classesSec.querySelector('.section-label').textContent = '🏁 Race Day Bracket';
+    classesEl.innerHTML = '';
+
+    // Class selector tabs
+    const classes = Object.keys(data);
+    const classLabels = { tf:'Top Fuel', fc:'Funny Car', ps:'Pro Stock', psm:'Pro Stock Moto', pm:'Pro Mod' };
+    const classPills  = { tf:'pill-nitro', fc:'pill-nitro', ps:'pill-prostock', psm:'pill-prostock', pm:'pill-promod' };
+
+    let activeBClass = classes[0];
+    const tabRow = document.createElement('div');
+    tabRow.className = 'qual-class-tabs';
+    tabRow.style.marginBottom = 'var(--space-3)';
+    classes.forEach(cls => {
+      const btn = document.createElement('button');
+      btn.className = `qual-tab ${cls === activeBClass ? 'active' : ''}`;
+      btn.textContent = classLabels[cls] || cls.toUpperCase();
+      btn.addEventListener('click', () => {
+        activeBClass = cls;
+        tabRow.querySelectorAll('.qual-tab').forEach(t => t.classList.toggle('active', t === btn));
+        renderBracket(cls);
+      });
+      tabRow.appendChild(btn);
+    });
+    classesEl.appendChild(tabRow);
+
+    const bracketContent = document.createElement('div');
+    bracketContent.id = 'bracket-content';
+    classesEl.appendChild(bracketContent);
+
+    function renderBracket(cls) {
+      const rounds = data[cls]?.rounds || [];
+      bracketContent.innerHTML = rounds.map(round => `
+        <div class="bracket-round">
+          <div class="bracket-round-label">${round.name}</div>
+          ${round.pairs.map(pair => `
+            <div class="bracket-pair">
+              <div class="bracket-car winner-car">
+                <span class="bracket-flag">🏆</span>
+                <span class="bracket-name">${pair.w}</span>
+                <div class="bracket-run"><span class="bracket-et">${pair.wet}s</span> <span class="bracket-mph">${pair.wmp} mph</span></div>
+              </div>
+              <div class="bracket-car loser-car">
+                <span class="bracket-name">${pair.l}</span>
+                <div class="bracket-run"><span class="bracket-et">${pair.let}s</span> <span class="bracket-mph">${pair.lmp} mph</span></div>
+              </div>
+            </div>`).join('')}
+        </div>`).join('');
+    }
+
+    renderBracket(activeBClass);
+  }
+
+  // Hide itinerary
+  const itin = document.getElementById('itinerary-content');
+  if (itin) itin.closest('.section-block').setAttribute('hidden','');
+  const tickets = document.getElementById('modal-tickets');
+  if (tickets) tickets.setAttribute('hidden','');
+
+  overlay.removeAttribute('hidden');
+  sheet.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => { overlay.classList.add('visible'); sheet.classList.add('open'); });
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
