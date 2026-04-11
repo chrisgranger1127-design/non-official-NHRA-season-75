@@ -2284,7 +2284,6 @@ function initQualifyingTab() {
         <div class="qual-pos-wrap">
           <span class="qual-pos">${q.pos}</span>
           ${q.pos === 16 ? '<span class="qual-cutline">CUT</span>' : ''}
-          ${q.pos === 9  ? '<span class="qual-cutline" style="background:rgba(245,166,35,0.15);color:var(--gold);border-color:var(--gold)">ALT</span>' : ''}
         </div>
         <div class="qual-info">
           <div class="qual-driver">${q.driver}</div>
