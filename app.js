@@ -2312,11 +2312,132 @@ function initQualifyingTab() {
   if (select.value) renderQualTab();
 }
 
+
+// ─── LIVE QUALIFYING FETCH ────────────────────────────────────────────────────
+// During a race weekend, fetch live qualifying order from NHRA every 5 minutes.
+// Uses allorigins.win CORS proxy to access nhradata.com JSON endpoints.
+
+const NHRA_CLASS_CODES = {
+  tf:  'Top%20Fuel%20Dragster',
+  fc:  'Fuel%20Funny%20Car',
+  ps:  'Pro%20Stock',
+  psm: 'Pro%20Stock%20Motorcycle',
+};
+
+// Map race id to nhradata event number (PC1 = Pro classes event series)
+const NHRA_EVENT_NUMS = {
+  1: 1,  // Gatornationals
+  2: 2,  // Arizona
+  3: 3,  // Winternationals
+  4: 4,  // 4-Wide
+  5: 5,
+};
+
+async function fetchLiveQualifying(raceId, classKey) {
+  const eventNum = NHRA_EVENT_NUMS[raceId];
+  const classCode = NHRA_CLASS_CODES[classKey];
+  if (!eventNum || !classCode) return null;
+
+  const url = `https://nhradata.com/CompetitorsDtl/2026/PC1/${eventNum}/3/${classCode}`;
+  const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+
+  try {
+    const res = await fetch(proxy, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const html = data.contents || '';
+
+    // Parse the qualifying table
+    // nhradata returns pipe-delimited table rows
+    const rows = [];
+    const lines = html.split('\n');
+    let inTable = false;
+    lines.forEach(line => {
+      const parts = line.split('|').map(s => s.trim()).filter(Boolean);
+      // Look for lines with ET patterns like 3.7xx or 6.5xx
+      if (parts.length >= 4) {
+        const etMatch = parts.find(p => /^[3-9]\.\d{3}$/.test(p));
+        const mphMatch = parts.find(p => /^\d{2,3}\.\d{1,2}$/.test(p));
+        const nameMatch = parts.find(p => p.length > 4 && /[A-Za-z]/.test(p) && !/^(Top|Pro|Funny|Super)/.test(p));
+        const carMatch = parts.find(p => /^\d{1,4}[A-Z]?$/.test(p) && parseInt(p) < 10000);
+        if (etMatch && nameMatch) {
+          rows.push({
+            pos: rows.length + 1,
+            driver: nameMatch,
+            car: carMatch || '—',
+            et: etMatch,
+            mph: mphMatch || '—',
+          });
+        }
+      }
+    });
+
+    if (rows.length > 3) return rows;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+// Live refresh loop — runs every 5 min during race weekend
+let _liveQualInterval = null;
+let _liveQualRaceId   = null;
+
+function startLiveQualRefresh(raceId) {
+  if (_liveQualInterval) clearInterval(_liveQualInterval);
+  _liveQualRaceId = raceId;
+
+  async function doRefresh() {
+    const classes = ['tf','fc','ps','psm'];
+    let updated = false;
+    for (const cls of classes) {
+      const rows = await fetchLiveQualifying(raceId, cls);
+      if (rows && rows.length > 3) {
+        if (!QUALIFYING[raceId]) QUALIFYING[raceId] = {};
+        if (!QUALIFYING[raceId][cls]) {
+          QUALIFYING[raceId][cls] = { lastSession: 1, sessions: {1:null,2:null,3:null,4:null} };
+        }
+        // Detect which session by count changes
+        const q = QUALIFYING[raceId][cls];
+        const lastQ = q.lastSession || 1;
+        q.sessions[lastQ] = rows;
+        q.updated = new Date().toLocaleString('en-US', {
+          month:'short', day:'numeric', hour:'numeric', minute:'2-digit', timeZone:'America/New_York'
+        }) + ' ET';
+        updated = true;
+      }
+    }
+    if (updated) {
+      // Re-render if qualifying tab is active
+      if (activeView === 'qualifying') initQualifyingTab();
+      const el = document.getElementById('qual-main-updated');
+      if (el && el.textContent) el.textContent += ' · Auto-updated';
+    }
+  }
+
+  doRefresh(); // run immediately
+  _liveQualInterval = setInterval(doRefresh, 5 * 60 * 1000);
+}
+
+function stopLiveQualRefresh() {
+  if (_liveQualInterval) { clearInterval(_liveQualInterval); _liveQualInterval = null; }
+}
+
+// Start refresh if a race is currently live
+function checkAndStartLiveRefresh() {
+  const t = today();
+  const liveRace = RACES.find(r => getRaceStatus(r) === 'live');
+  if (liveRace) {
+    startLiveQualRefresh(liveRace.id);
+  }
+}
+
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 updateStats();
 renderSchedule();
 initCountdown();
 initQualifyingTab();
+checkAndStartLiveRefresh();
 
 // Kick off background entry list refresh on app load
 // (silent — doesn't block the UI, updates when ready)
