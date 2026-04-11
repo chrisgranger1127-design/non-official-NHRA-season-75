@@ -543,6 +543,158 @@ const RACES = [
   },
 ];
 
+
+// ─── QUALIFYING RESULTS ──────────────────────────────────────────────────────
+// Per-round qualifying data. sessions[Q] = array of {pos, driver, car, et, mph}
+// currentOrder = best combined order after all completed rounds
+// lastSession = highest completed session number
+
+const QUALIFYING = {
+  3: { // Winternationals · Apr 9-12 · Pomona CA
+    tf: {
+      lastSession: 2,
+      updated: "Apr 10, 2026 · After Q2",
+      sessions: {
+        1: [ // Q1 results — best run in Q1 session only (session order)
+          { pos:1,  driver:"Leah Pruett",    car:"777", et:"3.724", mph:"329.75" },
+          { pos:2,  driver:"Josh Hart",      car:"77",  et:"3.733", mph:"336.15" },
+          { pos:3,  driver:"Shawn Langdon",  car:"2",   et:"3.745", mph:"338.51" },
+          { pos:4,  driver:"Shawn Reed",     car:"8",   et:"3.755", mph:"330.31" },
+          { pos:5,  driver:"Doug Kalitta",   car:"1",   et:"3.756", mph:"338.34" },
+          { pos:6,  driver:"Billy Torrence", car:"474", et:"3.774", mph:"334.32" },
+          { pos:7,  driver:"Tony Stewart",   car:"14",  et:"3.815", mph:"325.85" },
+          { pos:8,  driver:"Maddi Gordon",   car:"100", et:"3.819", mph:"326.56" },
+          { pos:9,  driver:"Will Smith",     car:"200", et:"3.870", mph:"322.42" },
+          { pos:10, driver:"Clay Millican",  car:"51",  et:"4.272", mph:"200.71" },
+          { pos:11, driver:"Justin Ashley",  car:"3",   et:"5.016", mph:"144.72" },
+          { pos:12, driver:"Tony Schumacher",car:"15",  et:"5.339", mph:"132.82" },
+          { pos:13, driver:"Antron Brown",   car:"123", et:"6.044", mph:"113.13" },
+          { pos:14, driver:"Cameron Ferre",  car:"748", et:"6.331", mph:"89.05"  },
+          { pos:15, driver:"Ron August Jr",  car:"7727",et:"6.942", mph:"83.45"  },
+        ],
+        2: [ // Q2 — current best combined order after Q1+Q2
+          { pos:1,  driver:"Leah Pruett",    car:"777", et:"3.724", mph:"329.75" },
+          { pos:2,  driver:"Josh Hart",      car:"77",  et:"3.733", mph:"336.15" },
+          { pos:3,  driver:"Shawn Langdon",  car:"2",   et:"3.745", mph:"338.51" },
+          { pos:4,  driver:"Shawn Reed",     car:"8",   et:"3.755", mph:"330.31" },
+          { pos:5,  driver:"Doug Kalitta",   car:"1",   et:"3.756", mph:"338.34" },
+          { pos:6,  driver:"Billy Torrence", car:"474", et:"3.774", mph:"334.32" },
+          { pos:7,  driver:"Tony Stewart",   car:"14",  et:"3.815", mph:"325.85" },
+          { pos:8,  driver:"Maddi Gordon",   car:"100", et:"3.819", mph:"326.56" },
+          { pos:9,  driver:"Will Smith",     car:"200", et:"3.870", mph:"322.42" },
+          { pos:10, driver:"Clay Millican",  car:"51",  et:"4.272", mph:"200.71" },
+          { pos:11, driver:"Justin Ashley",  car:"3",   et:"5.016", mph:"144.72" },
+          { pos:12, driver:"Tony Schumacher",car:"15",  et:"5.339", mph:"132.82" },
+          { pos:13, driver:"Antron Brown",   car:"123", et:"6.044", mph:"113.13" },
+          { pos:14, driver:"Cameron Ferre",  car:"748", et:"6.331", mph:"89.05"  },
+          { pos:15, driver:"Ron August Jr",  car:"7727",et:"6.942", mph:"83.45"  },
+        ],
+        3: null, // Q3 — Saturday Apr 11
+        4: null, // Q4 — Saturday Apr 11
+      }
+    },
+    fc: {
+      lastSession: 2,
+      updated: "Apr 10, 2026 · After Q2",
+      sessions: {
+        1: [
+          { pos:1,  driver:"Jordan Vandergriff", car:"24",   et:"3.951", mph:"327.90" },
+          { pos:2,  driver:"Alexis DeJoria",     car:"771",  et:"3.989", mph:"328.30" },
+          { pos:3,  driver:"Ron Capps",          car:"28",   et:"4.007", mph:"314.17" },
+          { pos:4,  driver:"Austin Prock",       car:"1",    et:"4.015", mph:"312.86" },
+          { pos:5,  driver:"Matt Hagan",         car:"14",   et:"4.037", mph:"324.75" },
+          { pos:6,  driver:"Dave Richards",      car:"139",  et:"4.051", mph:"317.27" },
+          { pos:7,  driver:"Jason Rupert",       car:"766",  et:"4.060", mph:"318.09" },
+          { pos:8,  driver:"Paul Lee",           car:"6",    et:"4.067", mph:"317.87" },
+          { pos:9,  driver:"JR Todd",            car:"373",  et:"4.082", mph:"322.19" },
+          { pos:10, driver:"Blake Alexander",    car:"256",  et:"4.143", mph:"308.07" },
+          { pos:11, driver:"Dylan Winefsky",     car:"7818", et:"4.303", mph:"232.31" },
+          { pos:12, driver:"Cruz Pedregon",      car:"71",   et:"4.317", mph:"217.04" },
+          { pos:13, driver:"Spencer Hyde",       car:"9",    et:"4.337", mph:"216.65" },
+          { pos:14, driver:"Daniel Wilkerson",   car:"5",    et:"4.679", mph:"179.09" },
+          { pos:15, driver:"Jack Beckman",       car:"3",    et:"4.932", mph:"179.64" },
+          { pos:16, driver:"Chad Green",         car:"7",    et:"4.954", mph:"184.04" },
+          { pos:17, driver:"Jim Campbell",       car:"703",  et:"5.547", mph:"129.24" },
+          { pos:18, driver:"Todd Lesenko",       car:"22",   et:"5.774", mph:"124.04" },
+        ],
+        2: [
+          { pos:1,  driver:"Jordan Vandergriff", car:"24",   et:"3.951", mph:"327.90" },
+          { pos:2,  driver:"Alexis DeJoria",     car:"771",  et:"3.989", mph:"328.30" },
+          { pos:3,  driver:"Ron Capps",          car:"28",   et:"4.007", mph:"314.17" },
+          { pos:4,  driver:"Austin Prock",       car:"1",    et:"4.015", mph:"312.86" },
+          { pos:5,  driver:"Matt Hagan",         car:"14",   et:"4.037", mph:"324.75" },
+          { pos:6,  driver:"Dave Richards",      car:"139",  et:"4.051", mph:"317.27" },
+          { pos:7,  driver:"Jason Rupert",       car:"766",  et:"4.060", mph:"318.09" },
+          { pos:8,  driver:"Paul Lee",           car:"6",    et:"4.067", mph:"317.87" },
+          { pos:9,  driver:"JR Todd",            car:"373",  et:"4.082", mph:"322.19" },
+          { pos:10, driver:"Blake Alexander",    car:"256",  et:"4.143", mph:"308.07" },
+          { pos:11, driver:"Dylan Winefsky",     car:"7818", et:"4.303", mph:"232.31" },
+          { pos:12, driver:"Cruz Pedregon",      car:"71",   et:"4.317", mph:"217.04" },
+          { pos:13, driver:"Spencer Hyde",       car:"9",    et:"4.337", mph:"216.65" },
+          { pos:14, driver:"Daniel Wilkerson",   car:"5",    et:"4.679", mph:"179.09" },
+          { pos:15, driver:"Jack Beckman",       car:"3",    et:"4.932", mph:"179.64" },
+          { pos:16, driver:"Chad Green",         car:"7",    et:"4.954", mph:"184.04" },
+          { pos:17, driver:"Jim Campbell",       car:"703",  et:"5.547", mph:"129.24" },
+          { pos:18, driver:"Todd Lesenko",       car:"22",   et:"5.774", mph:"124.04" },
+        ],
+        3: null,
+        4: null,
+      }
+    },
+    ps: {
+      lastSession: 2,
+      updated: "Apr 10, 2026 · After Q2",
+      sessions: {
+        1: [
+          { pos:1,  driver:"Greg Anderson",   car:"2",    et:"6.544", mph:"209.39" },
+          { pos:2,  driver:"Dallas Glenn",    car:"1",    et:"6.553", mph:"209.17" },
+          { pos:3,  driver:"Greg Stanfield",  car:"445",  et:"6.568", mph:"209.07" },
+          { pos:4,  driver:"Aaron Stanfield", car:"4",    et:"6.572", mph:"208.94" },
+          { pos:5,  driver:"Matt Hartford",   car:"3",    et:"6.575", mph:"209.98" },
+          { pos:6,  driver:"Matt Latino",     car:"16",   et:"6.575", mph:"209.52" },
+          { pos:7,  driver:"Eric Latino",     car:"7",    et:"6.575", mph:"209.39" },
+          { pos:8,  driver:"Cody Anderson",   car:"17",   et:"6.579", mph:"208.36" },
+          { pos:9,  driver:"Dave Connolly",   car:"51",   et:"6.580", mph:"210.01" },
+          { pos:10, driver:"Deric Kramer",    car:"52",   et:"6.584", mph:"207.91" },
+          { pos:11, driver:"Erica Enders",    car:"6",    et:"6.590", mph:"208.68" },
+          { pos:12, driver:"Troy Coughlin Jr",car:"10",   et:"6.600", mph:"207.98" },
+          { pos:13, driver:"Joey Grose",      car:"703",  et:"6.616", mph:"208.46" },
+          { pos:14, driver:"Kenny Delco",     car:"150",  et:"6.624", mph:"208.84" },
+          { pos:15, driver:"Chris Vang",      car:"5707", et:"6.627", mph:"207.08" },
+          { pos:16, driver:"Stephen Bell",    car:"439",  et:"6.628", mph:"207.46" },
+          { pos:17, driver:"Chris McGaha",    car:"4264", et:"6.643", mph:"209.30" },
+          { pos:18, driver:"Mason McGaha",    car:"400",  et:"6.670", mph:"207.88" },
+          { pos:19, driver:"Jeg Coughlin Jr", car:"8",    et:"6.675", mph:"209.23" },
+        ],
+        2: [
+          { pos:1,  driver:"Greg Anderson",   car:"2",    et:"6.544", mph:"209.39" },
+          { pos:2,  driver:"Dallas Glenn",    car:"1",    et:"6.553", mph:"209.17" },
+          { pos:3,  driver:"Greg Stanfield",  car:"445",  et:"6.568", mph:"209.07" },
+          { pos:4,  driver:"Aaron Stanfield", car:"4",    et:"6.572", mph:"208.94" },
+          { pos:5,  driver:"Matt Hartford",   car:"3",    et:"6.575", mph:"209.98" },
+          { pos:6,  driver:"Matt Latino",     car:"16",   et:"6.575", mph:"209.52" },
+          { pos:7,  driver:"Eric Latino",     car:"7",    et:"6.575", mph:"209.39" },
+          { pos:8,  driver:"Cody Anderson",   car:"17",   et:"6.579", mph:"208.36" },
+          { pos:9,  driver:"Dave Connolly",   car:"51",   et:"6.580", mph:"210.01" },
+          { pos:10, driver:"Deric Kramer",    car:"52",   et:"6.584", mph:"207.91" },
+          { pos:11, driver:"Erica Enders",    car:"6",    et:"6.590", mph:"208.68" },
+          { pos:12, driver:"Troy Coughlin Jr",car:"10",   et:"6.600", mph:"207.98" },
+          { pos:13, driver:"Joey Grose",      car:"703",  et:"6.616", mph:"208.46" },
+          { pos:14, driver:"Kenny Delco",     car:"150",  et:"6.624", mph:"208.84" },
+          { pos:15, driver:"Chris Vang",      car:"5707", et:"6.627", mph:"207.08" },
+          { pos:16, driver:"Stephen Bell",    car:"439",  et:"6.628", mph:"207.46" },
+          { pos:17, driver:"Chris McGaha",    car:"4264", et:"6.643", mph:"209.30" },
+          { pos:18, driver:"Mason McGaha",    car:"400",  et:"6.670", mph:"207.88" },
+          { pos:19, driver:"Jeg Coughlin Jr", car:"8",    et:"6.675", mph:"209.23" },
+        ],
+        3: null,
+        4: null,
+      }
+    },
+    psm: null,
+  }
+};
+
 // Real Winternationals Entry List (from NHRA.com, April 4 2026)
 const RACE_ENTRY_LISTS = {
   3: { // Winternationals
@@ -1581,6 +1733,136 @@ function openModal(race) {
     });
   } else {
     wSec.setAttribute('hidden','');
+  }
+
+  // Qualifying results section — Q1/Q2/Q3/Q4 tabs per class
+  const qualSection = document.getElementById('modal-qualifying-section');
+  const qualList    = document.getElementById('modal-qual-list');
+  const qualBadge   = document.getElementById('modal-qual-live-badge');
+  const qualUpdated = document.getElementById('qual-updated');
+  const raceQual    = QUALIFYING[race.id];
+  const raceStatus  = getRaceStatus(race);
+
+  // Clear any previous auto-refresh interval
+  if (window._qualRefreshInterval) { clearInterval(window._qualRefreshInterval); window._qualRefreshInterval = null; }
+
+  if (qualSection && raceQual && raceStatus !== 'completed') {
+    const hasAnyData = Object.values(raceQual).some(v => v && v.sessions && Object.values(v.sessions).some(s => s && s.length));
+    if (hasAnyData || raceStatus === 'live') {
+      qualSection.removeAttribute('hidden');
+      if (qualBadge) {
+        qualBadge.textContent = raceStatus === 'live' ? 'LIVE' : 'FINAL QUAL';
+        qualBadge.className   = raceStatus === 'live' ? 'live-badge' : 'live-badge final-badge';
+      }
+
+      // State
+      let activeQClass = Object.keys(raceQual).find(k => raceQual[k]?.sessions) || 'tf';
+      let activeQRound = null; // null = current best order (all rounds combined)
+
+      function getQRoundLabel(n) { return n ? `Q${n}` : 'Current'; }
+
+      function buildRoundTabs(cls) {
+        const data = raceQual[cls];
+        if (!data) return '';
+        const sessions = data.sessions || {};
+        const maxQ = 4;
+        let tabs = `<button class="qround-tab ${activeQRound === null ? 'active' : ''}" data-qround="current">Current</button>`;
+        for (let i = 1; i <= maxQ; i++) {
+          const hasData = sessions[i] && sessions[i].length > 0;
+          tabs += `<button class="qround-tab ${activeQRound === i ? 'active' : ''} ${!hasData ? 'qround-pending' : ''}" data-qround="${i}" ${!hasData ? 'disabled' : ''}>Q${i}</button>`;
+        }
+        return tabs;
+      }
+
+      function renderQualRows(cls, round) {
+        const data = raceQual[cls];
+        if (!qualList) return;
+        if (!data) {
+          qualList.innerHTML = `<div class="qual-empty">No qualifying data for this class</div>`;
+          return;
+        }
+        // Get session data — null round = use lastSession (current best order)
+        const sessions = data.sessions || {};
+        const rows = round ? sessions[round] : sessions[data.lastSession];
+        if (qualUpdated) qualUpdated.textContent = round
+          ? `Q${round} session results · ${data.updated}`
+          : `Current order after Q${data.lastSession} · ${data.updated}`;
+        if (!rows || !rows.length) {
+          qualList.innerHTML = `<div class="qual-empty">${round ? `Q${round} not yet run` : 'No results yet'}</div>`;
+          return;
+        }
+        // Top 16 are in the show; rest are on the bubble
+        qualList.innerHTML = rows.map(q => `
+          <div class="qual-row ${q.pos <= 16 ? 'qual-in' : 'qual-out'} ${q.pos <= 8 ? 'qual-top8' : ''} ${q.pos === 1 ? 'qual-leader' : ''}">
+            <div class="qual-pos-wrap">
+              <span class="qual-pos">${q.pos}</span>
+              ${q.pos === 16 ? '<span class="qual-cutline">CUT</span>' : ''}
+            </div>
+            <div class="qual-info">
+              <div class="qual-driver">${q.driver}</div>
+              <div class="qual-car">#${q.car}</div>
+            </div>
+            <div class="qual-times">
+              <div class="qual-et">${q.et}s</div>
+              <div class="qual-mph">${q.mph} mph</div>
+            </div>
+          </div>`).join('');
+      }
+
+      function renderClassTabs() {
+        document.querySelectorAll('#qual-class-tabs .qual-tab').forEach(t => {
+          t.classList.toggle('active', t.dataset.qclass === activeQClass);
+        });
+      }
+
+      function renderRoundTabs() {
+        const rtContainer = document.getElementById('qual-round-tabs');
+        if (!rtContainer) return;
+        rtContainer.innerHTML = buildRoundTabs(activeQClass);
+        rtContainer.querySelectorAll('.qround-tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            const r = tab.dataset.qround;
+            activeQRound = r === 'current' ? null : parseInt(r);
+            rtContainer.querySelectorAll('.qround-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            renderQualRows(activeQClass, activeQRound);
+          });
+        });
+      }
+
+      function fullRender(cls) {
+        activeQClass = cls;
+        activeQRound = null;
+        renderClassTabs();
+        renderRoundTabs();
+        renderQualRows(cls, null);
+      }
+
+      // Wire class tabs
+      document.querySelectorAll('#qual-class-tabs .qual-tab').forEach(tab => {
+        const newTab = tab.cloneNode(true);
+        tab.parentNode.replaceChild(newTab, tab);
+        newTab.addEventListener('click', () => fullRender(newTab.dataset.qclass));
+      });
+
+      fullRender(activeQClass);
+
+      // 5-minute auto-refresh during race weekend
+      if (raceStatus === 'live') {
+        window._qualRefreshInterval = setInterval(() => {
+          renderQualRows(activeQClass, activeQRound);
+          if (qualUpdated) {
+            const now = new Date().toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit'});
+            qualUpdated.textContent += ` · Checked ${now} ET`;
+          }
+        }, 5 * 60 * 1000);
+      }
+
+    } else {
+      qualSection.setAttribute('hidden','');
+    }
+  } else if (qualSection) {
+    qualSection.setAttribute('hidden','');
   }
 
   // Entry list — accordion: click class name to expand/collapse driver list
