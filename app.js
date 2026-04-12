@@ -596,6 +596,36 @@ const BRACKETS = {
         { w:"Matt Hartford",  l:"Cody Coughlin",    wet:"6.587", wmp:"208.94", let:"6.615", lmp:"207.91" },
       ]},
     ]},
+    psm: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Richard Gadson", l:"Chris Bostick",   wet:"6.753", wmp:"200.05", let:"6.891", lmp:"194.60" },
+        { w:"Gaige Herrera",  l:"Ron Tornow",      wet:"6.761", wmp:"199.80", let:"7.112", lmp:"181.30" },
+        { w:"Matt Smith",     l:"Marc Ingwersen",   wet:"6.779", wmp:"199.24", let:"6.892", lmp:"195.40" },
+        { w:"John Hall",      l:"Chase Van Sant",   wet:"6.788", wmp:"198.90", let:"6.801", lmp:"198.10" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Richard Gadson", l:"Matt Smith",       wet:"6.758", wmp:"200.12", let:"6.790", lmp:"198.80" },
+        { w:"Gaige Herrera",  l:"John Hall",        wet:"6.770", wmp:"199.50", let:"6.812", lmp:"197.60" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Richard Gadson", l:"Gaige Herrera",    wet:"6.753", wmp:"200.05", let:"6.781", lmp:"199.20" },
+      ]},
+    ]},
+    pm: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Derek Menholt",   l:"Lyle Barnett",    wet:"5.741", wmp:"258.10", let:"5.842", lmp:"252.30" },
+        { w:"Billy Banaka",    l:"Steve Jackson",   wet:"5.762", wmp:"256.80", let:"5.801", lmp:"254.40" },
+        { w:"JR Gray",         l:"Mike Castellana",  wet:"5.778", wmp:"255.90", let:"5.831", lmp:"253.10" },
+        { w:"Justin Bond",    l:"Mike Thielen",     wet:"5.790", wmp:"254.70", let:"5.910", lmp:"248.20" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Derek Menholt",   l:"Billy Banaka",    wet:"5.741", wmp:"258.10", let:"5.780", lmp:"255.40" },
+        { w:"JR Gray",         l:"Justin Bond",     wet:"5.768", wmp:"256.20", let:"5.812", lmp:"253.80" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Derek Menholt",   l:"JR Gray",         wet:"5.741", wmp:"258.10", let:"5.795", lmp:"254.90" },
+      ]},
+    ]},
   },
   2: { // Arizona Nationals
     tf: { rounds: [
@@ -641,6 +671,21 @@ const BRACKETS = {
       ]},
       { name: "Final", pairs: [
         { w:"Dallas Glenn",   l:"Cody Coughlin",    wet:"6.627", wmp:"206.39", let:"6.654", lmp:"206.22" },
+      ]},
+    ]},
+    pm: { rounds: [
+      { name: "R1 — Quarterfinals", pairs: [
+        { w:"Justin Bond",    l:"Derek Menholt",   wet:"5.755", wmp:"257.40", let:"5.772", lmp:"256.10" },
+        { w:"Billy Banaka",   l:"JR Gray",          wet:"5.768", wmp:"256.30", let:"5.793", lmp:"254.80" },
+        { w:"Steve Jackson",  l:"Mike Stavrinos",   wet:"5.801", wmp:"254.60", let:"5.845", lmp:"252.90" },
+        { w:"Mike Castellana",l:"Sidnei Frigo",     wet:"5.810", wmp:"253.90", let:"5.862", lmp:"251.40" },
+      ]},
+      { name: "R2 — Semifinals", pairs: [
+        { w:"Justin Bond",    l:"Billy Banaka",    wet:"5.755", wmp:"257.40", let:"5.781", lmp:"255.60" },
+        { w:"Steve Jackson",  l:"Mike Castellana",  wet:"5.790", wmp:"255.10", let:"5.835", lmp:"253.20" },
+      ]},
+      { name: "Final", pairs: [
+        { w:"Justin Bond",    l:"Steve Jackson",   wet:"5.755", wmp:"257.40", let:"5.821", lmp:"254.00" },
       ]},
     ]},
   },
