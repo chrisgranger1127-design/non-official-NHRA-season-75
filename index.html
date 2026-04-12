@@ -142,6 +142,49 @@
     <div class="standings-wrap" id="standings-list"></div>
   </div>
 
+  <!-- ══ 2FAST2TASTY VIEW ══ -->
+  <div id="view-f2t" class="view" hidden>
+    <div class="view-header">
+      <h2 class="view-title">⚡ 2Fast2Tasty</h2>
+      <p class="view-sub">Mission Foods Challenge · Bonus points survive the Countdown reset</p>
+    </div>
+    <div class="f2t-explainer">
+      <div class="f2t-exp-row"><span class="f2t-exp-icon">🏆</span><span>Winner = <strong>3 pts</strong></span></div>
+      <div class="f2t-exp-row"><span class="f2t-exp-icon">🥈</span><span>Runner-up = <strong>2 pts</strong></span></div>
+      <div class="f2t-exp-row"><span class="f2t-exp-icon">⚡</span><span>Quickest losing semi = <strong>1 pt</strong></span></div>
+    </div>
+    <div class="f2t-class-tabs">
+      <button class="f2t-tab active" data-f2tclass="tf">Top Fuel</button>
+      <button class="f2t-tab" data-f2tclass="fc">Funny Car</button>
+      <button class="f2t-tab" data-f2tclass="ps">Pro Stock</button>
+      <button class="f2t-tab" data-f2tclass="psm">Pro Stock Moto</button>
+    </div>
+    <div class="f2t-wrap" id="f2t-list"></div>
+  </div>
+
+  <!-- ══ BRACKETS VIEW ══ -->
+  <div id="view-brackets" class="view" hidden>
+    <div class="view-header">
+      <h2 class="view-title">🏁 Race Day Brackets</h2>
+      <p class="view-sub">Round-by-round elimination results</p>
+    </div>
+    <div class="bracket-race-select-wrap">
+      <select class="qual-race-select" id="bracket-race-select">
+        <option value="">Select a Race...</option>
+      </select>
+    </div>
+    <div class="bracket-class-tabs" id="bracket-class-tabs" hidden>
+      <button class="qual-tab active" data-bclass="tf">Top Fuel</button>
+      <button class="qual-tab" data-bclass="fc">Funny Car</button>
+      <button class="qual-tab" data-bclass="ps">Pro Stock</button>
+    </div>
+    <div class="bracket-wrap" id="bracket-list"></div>
+    <div class="qual-no-race" id="bracket-no-race">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M8 21h8M12 17v4M6 3H4v5a8 8 0 0 0 16 0V3h-2"/></svg>
+      <p>Select a completed race above</p>
+    </div>
+  </div>
+
   <!-- ══ QUALIFYING VIEW ══ -->
   <div id="view-qualifying" class="view" hidden>
     <div class="view-header">
@@ -213,35 +256,27 @@
   <!-- BOTTOM NAV -->
   <nav class="bottom-nav" role="navigation" aria-label="Main navigation">
     <button class="nav-btn active" data-view="schedule" aria-label="Schedule">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       <span>Schedule</span>
     </button>
-    <button class="nav-btn" data-view="winners" aria-label="Winners">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M8 21h8M12 17v4M6 3H4v5a8 8 0 0 0 16 0V3h-2"/>
-      </svg>
-      <span>Winners</span>
-    </button>
     <button class="nav-btn" data-view="standings" aria-label="Standings">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 20V10M12 20V4M6 20v-6"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
       <span>Standings</span>
     </button>
     <button class="nav-btn" data-view="qualifying" aria-label="Qualifying">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
       <span>Qualifying</span>
     </button>
+    <button class="nav-btn" data-view="f2t" aria-label="2Fast2Tasty">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <span>2F2T</span>
+    </button>
+    <button class="nav-btn" data-view="brackets" aria-label="Brackets">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M6 3H4v5a8 8 0 0 0 16 0V3h-2"/></svg>
+      <span>Brackets</span>
+    </button>
     <button class="nav-btn" data-view="entries" aria-label="Drivers">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span>Drivers</span>
     </button>
   </nav>
