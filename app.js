@@ -3659,6 +3659,7 @@ document.querySelectorAll('.f2t-tab').forEach(tab => {
 let activeBracketRace = null;
 let activeBracketClass = 'tf';
 
+let _bracketsInited = false;
 function initBracketsTab() {
   const select = document.getElementById('bracket-race-select');
   const classTabs = document.getElementById('bracket-class-tabs');
@@ -3666,17 +3667,20 @@ function initBracketsTab() {
   const noRace = document.getElementById('bracket-no-race');
   if (!select) return;
 
-  // Clear and repopulate
-  select.innerHTML = '<option value="">Select a completed race...</option>';
-  Object.keys(BRACKETS).forEach(raceId => {
-    const race = RACES.find(r => r.id === parseInt(raceId));
-    if (race) {
-      const opt = document.createElement('option');
-      opt.value = raceId;
-      opt.textContent = `Race ${race.id} — ${race.name}`;
-      select.appendChild(opt);
-    }
-  });
+  // Only populate options once
+  if (!_bracketsInited) {
+    select.innerHTML = '<option value="">Select a completed race...</option>';
+    Object.keys(BRACKETS).forEach(raceId => {
+      const race = RACES.find(r => r.id === parseInt(raceId));
+      if (race) {
+        const opt = document.createElement('option');
+        opt.value = raceId;
+        opt.textContent = `Race ${race.id} — ${race.name}`;
+        select.appendChild(opt);
+      }
+    });
+    _bracketsInited = true;
+  }
 
   function renderBracketTab() {
     const raceId = parseInt(select.value);
@@ -3739,6 +3743,19 @@ function initBracketsTab() {
       activeBracketClass = tab.dataset.bclass;
       renderBracketRounds();
     });
+  });
+
+  // Wire select change
+  select.onchange = renderBracketTab;
+
+  // Wire class tabs
+  document.querySelectorAll('#bracket-class-tabs .qual-tab').forEach(tab => {
+    tab.onclick = () => {
+      document.querySelectorAll('#bracket-class-tabs .qual-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeBracketClass = tab.dataset.bclass;
+      renderBracketRounds();
+    };
   });
 
   // Auto-select most recent race
