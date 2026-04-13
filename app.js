@@ -3778,44 +3778,44 @@ function initBracketsTab() {
     if (!data) { list.innerHTML = `<div class="qual-empty">No bracket data for this class</div>`; return; }
 
     const rounds = data.rounds;
-    const numRounds = rounds.length;
+    const roundNames = { 0:'Quarterfinals', 1:'Semifinals', 2:'Final' };
 
-    // Build visual bracket as horizontal columns
-    let html = `<div class="vb-wrap">`;
+    let html = `<div class="tb-bracket">`;
 
     rounds.forEach((round, ri) => {
-      const isLast = ri === numRounds - 1;
-      html += `<div class="vb-col ${isLast ? 'vb-final' : ''}">
-        <div class="vb-col-label">${round.name}</div>
-        <div class="vb-matchups">`;
+      const isFinal = ri === rounds.length - 1;
+      const isSemi  = ri === rounds.length - 2;
+
+      html += `<div class="tb-round">
+        <div class="tb-round-hdr ${isFinal ? 'tb-final-hdr' : ''}">${round.name}</div>`;
 
       round.pairs.forEach((pair, pi) => {
         html += `
-          <div class="vb-matchup">
-            <div class="vb-slot vb-winner">
-              <div class="vb-slot-inner">
-                <span class="vb-trophy">🏆</span>
-                <div class="vb-driver-info">
-                  <span class="vb-name">${pair.w}</span>
-                  <span class="vb-run">${pair.wet}s · ${pair.wmp} mph</span>
-                </div>
+        <div class="tb-matchup ${isFinal ? 'tb-final-matchup' : ''}">
+          <div class="tb-car tb-win">
+            <div class="tb-car-left">
+              <span class="tb-medal">W</span>
+              <div>
+                <div class="tb-car-name">${pair.w}</div>
+                <div class="tb-car-run">${pair.wet}s &nbsp; ${pair.wmp} mph</div>
               </div>
             </div>
-            <div class="vb-connector"></div>
-            <div class="vb-slot vb-loser">
-              <div class="vb-slot-inner">
-                <span class="vb-trophy vb-trophy-empty"></span>
-                <div class="vb-driver-info">
-                  <span class="vb-name">${pair.l}</span>
-                  <span class="vb-run">${pair.let}s · ${pair.lmp} mph</span>
-                </div>
+          </div>
+          <div class="tb-vs">lost to</div>
+          <div class="tb-car tb-lose">
+            <div class="tb-car-left">
+              <span class="tb-medal tb-medal-l">L</span>
+              <div>
+                <div class="tb-car-name">${pair.l}</div>
+                <div class="tb-car-run">${pair.let}s &nbsp; ${pair.lmp} mph</div>
               </div>
             </div>
-            ${!isLast ? `<div class="vb-line-right"></div>` : ''}
-          </div>`;
+          </div>
+          ${!isFinal ? `<div class="tb-advances">advances →</div>` : `<div class="tb-advances tb-champ">🏆 Event Winner</div>`}
+        </div>`;
       });
 
-      html += `</div></div>`;
+      html += `</div>`;
     });
 
     html += `</div>`;
